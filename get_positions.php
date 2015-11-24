@@ -8,7 +8,7 @@
     }
     else
     {
-        $results = mysqli_query($con, "SELECT place, sent_score FROM Tweets WHERE place != 'None' and search_term='#syria' limit 10000");
+        $results = mysqli_query($con, "SELECT place, sent_score FROM Tweets WHERE place != 'None' and search_term='#gop' limit 10000");
         $positions = array();
         while($row = mysqli_fetch_row($results))
         {
