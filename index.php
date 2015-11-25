@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>Sentimentweet</title>
-        <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r69/three.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
@@ -41,8 +41,11 @@
 		<div id="map"></div>
 		<div id="notice">
 			<div class="loading">
-				Loading
+				Loading...
 			</div>
+		</div>
+		<div id="search">
+			<input type="text" class="sent_input" placeholder="Enter a term...">
 		</div>
 	</body>
 </html>
