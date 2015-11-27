@@ -12,6 +12,7 @@
 		<script src="./lib/dat.gui.js"></script>
 		<script src="./lib/threejs-layer.js"></script>
 		<script src="./lib/app.js"></script>
+		<script src="./lib/fuse.min.js"></script>
 		<script id="vertexshader" type="x-shader/x-vertex">
 	        attribute vec3 a_color;
 	        attribute float a_alpha;
@@ -45,7 +46,8 @@
 			</div>
 		</div>
 		<div id="search">
-			<input type="text" class="sent_input" placeholder="Enter a term...">
+			<input type="text" class="sent_input" placeholder="Enter a term..." oninput="fuseSearch(this.value);">
+			<ul class="sent_ul"></ul>
 		</div>
 	</body>
 </html>
