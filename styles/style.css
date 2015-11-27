@@ -87,4 +87,5 @@ canvas
   cursor: pointer;
   font-weight: bold;
   background-color: #fff177;
+  border-radius: 0px 0px 5px 5px;
 }
