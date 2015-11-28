@@ -1,7 +1,8 @@
 <html>
 	<head>
 		<title>Sentimentweet</title>
-    <link href="styles/style.css" rel="stylesheet">
+        <link href="styles/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r69/three.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
@@ -12,6 +13,7 @@
 		<script src="./lib/dat.gui.js"></script>
 		<script src="./lib/threejs-layer.js"></script>
 		<script src="./lib/app.js"></script>
+		<script src="./lib/fuse.min.js"></script>
 		<script id="vertexshader" type="x-shader/x-vertex">
 	        attribute vec3 a_color;
 	        attribute float a_alpha;
@@ -45,7 +47,11 @@
 			</div>
 		</div>
 		<div id="search">
-			<input type="text" class="sent_input" placeholder="Enter a term...">
+			<input type="text" class="sent_input" placeholder="Enter a term..." oninput="fuseSearch(this.value);">
+			<ul class="sent_ul"></ul>
+            <ul class="selected-terms">
+                
+            </ul>
 		</div>
 	</body>
 </html>

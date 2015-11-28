@@ -8,7 +8,12 @@
     }
     else
     {
-        $results = mysqli_query($con, "SELECT place, sent_score FROM Tweets WHERE place != 'None' and search_term='#gop' limit 10000");
+        // A big SQL injection can happen riiiiight here! Gotta prevent that later
+        // like maybe after the project is done!!
+        $search_terms = "'" . implode("','", $_GET['search_terms']) . "'";
+        $query = "SELECT place, sent_score FROM Tweets WHERE place != 'None' and search_term IN ($search_terms)";
+        $results = mysqli_query($con, $query);
+
         $positions = array();
         while($row = mysqli_fetch_row($results))
         {
