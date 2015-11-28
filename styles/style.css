@@ -90,5 +90,8 @@ canvas
   cursor: pointer;
   font-weight: 500;
   background-color: #fff177;
+}
+.sent_ul > li:last-child
+{
   border-radius: 0px 0px 5px 5px;
 }
