@@ -44,10 +44,14 @@ canvas
     width: 170px;
     height: 29px;
     position: absolute;
-    top: 10px;
+    top: 2px;
     left: 110px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
     border-radius: 2px;
+}
+#search input
+{
+    background-color: rgba(0, 0, 0, 0.3);
 }
 #tweets
 {
@@ -73,7 +77,7 @@ canvas
 {
     width: 100%;
     height: 29px;
-    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
     padding: 0;
     padding-left: 5px;
     margin: 0;
@@ -82,6 +86,7 @@ canvas
     font-family: Roboto, Arial, sans-serif;
     line-height: 29px;
     font-size: 8.25pt;
+    color: #eee;
 }
 .sent_ul
 {
@@ -91,6 +96,8 @@ canvas
   margin: 0;
 	padding: 0;
 	border: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #eee;
 }
 .sent_ul > li
 {
@@ -109,7 +116,7 @@ canvas
 {
   cursor: pointer;
   font-weight: 500;
-  background-color: #fff177;
+  background-color: #555;
 }
 .sent_ul > li:last-child
 {
@@ -121,6 +128,7 @@ canvas
     font-size: small;
     float: left;
     padding-left: 0;
+    display: none;
 }
 .term
 {
@@ -145,14 +153,39 @@ canvas
     overflow-y: scroll;
     max-height: 100px;
 }
+#term_frequency_wrapper
+{
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
 #term_frequency
 {
-  position: absolute;
-  left: 10px;
-  bottom: 40px;
-  height: 0px;
-  width: 0px;
-  background-color: #eee;
-  display: none;
-  border-radius: 2px;
 }
+th
+{
+    height: 55px;
+    white-space: nowrap;
+    font-size: 10px;
+    color: #eee;
+}
+th > div
+{
+    transform: 
+        translate(16px, 12px)
+        rotate(315deg);
+    width: 25px;
+}
+th > div > span
+{
+    border-bottom: 1px solid #333;
+    padding: 5px 0px;
+}
+#term_frequency_wrapper td
+{
+    color: #eee;
+    font-size: 10px;
+}
+

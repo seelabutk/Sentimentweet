@@ -53,9 +53,11 @@
 
             </ul>
 		</div>
-		<table id="term_frequency">
-			<thead></thead>
-			<tbody></tbody>
-		</table>
+        <div id="term_frequency_wrapper">
+    		<table id="term_frequency">
+	    		<thead></thead>
+		    	<tbody></tbody>
+            </table>
+        </div>
 	</body>
 </html>
