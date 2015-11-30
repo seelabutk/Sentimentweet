@@ -140,3 +140,8 @@ canvas
     color: black;
     cursor: pointer;
 }
+.gm-style .gm-style-iw
+{
+    overflow-y: scroll;
+    max-height: 100px;
+}
