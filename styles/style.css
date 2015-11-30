@@ -145,3 +145,14 @@ canvas
     overflow-y: scroll;
     max-height: 100px;
 }
+#term_frequency
+{
+  position: absolute;
+  left: 10px;
+  bottom: 40px;
+  height: 0px;
+  width: 0px;
+  background-color: #eee;
+  display: none;
+  border-radius: 2px;
+}

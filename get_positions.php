@@ -11,10 +11,10 @@
         // A big SQL injection can happen riiiiight here! Gotta prevent that later
         // like maybe after the project is done!!
         $search_terms = "'" . implode("','", $_GET['search_terms']) . "'";
-        $query = "SELECT latitude, longitude, sent_score FROM Tweets WHERE latitude is not NULL and search_term IN ($search_terms)";
+        $query = "SELECT latitude, longitude, sent_score, created_at, search_term FROM Tweets WHERE latitude is not NULL and search_term IN ($search_terms)";
         $results = mysqli_query($con, $query);
 
-        $positions = array();
+        $posbins = array();
         while($row = mysqli_fetch_row($results))
         {
 
@@ -28,9 +28,19 @@
             //$token = strtok(", ");
             $lng = floatval($row[1]);
             $score = floatval($row[2]);
+            $timestr = explode(" ", $row[3]);
+            $time = $timestr[0];
+            $term = $row[4];
 
-            array_push($positions, array($lat, $lng, $score));
+            if (!array_key_exists($term, $posbins)) {
+              $posbins[$term] = array();
+            }
+
+            if (!array_key_exists($time, $posbins[$term])) {
+              $posbins[$term][$time] = array();
+            }
+            array_push($posbins[$term][$time], array($lat, $lng, $score));
         }
-        echo json_encode($positions);
+        echo json_encode($posbins);
     }
 ?>

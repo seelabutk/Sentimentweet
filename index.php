@@ -50,8 +50,12 @@
 			<input type="text" class="sent_input" placeholder="Enter a term..." oninput="fuseSearch(this.value);">
 			<ul class="sent_ul"></ul>
             <ul class="selected-terms">
-                
+
             </ul>
 		</div>
+		<table id="term_frequency">
+			<thead></thead>
+			<tbody></tbody>
+		</table>
 	</body>
 </html>
