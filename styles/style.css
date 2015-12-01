@@ -20,14 +20,16 @@ canvas
     height: 100%;
     z-index: 1000;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.9);
     font-size: 11pt;
     font-style: bold;
     text-align: center;
     vertical-align: middle;
+    color: #eee;
 }
 .loading
 {
+    background-image: url('../images/coffee.png');
     background-position: -45 -45;
     top: 50%;
     width: 95px;
@@ -188,4 +190,20 @@ th > div > span
     color: #eee;
     font-size: 10px;
 }
+#term_frequency_wrapper th:hover
+{
+    cursor: pointer;
+}
+#term_frequency_wrapper th:hover
+{
+    text-decoration: underline;
+}
 
+i.fa.fa-times
+{
+    cursor: pointer;
+}
+i.fa.fa-times:hover
+{
+    color: red;
+}
