@@ -175,7 +175,6 @@ canvas
     overflow-y: scroll;
     max-height: 100px;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px #000;
     background-color: #eee;
     padding: 5px;
     top: 14px;
@@ -216,6 +215,10 @@ th > div > span
     color: #eee;
     font-size: 10px;
 }
+#term_frequency_wrapper td span
+{
+    font-size: 11px;
+}
 #term_frequency_wrapper th:hover
 {
     cursor: pointer;
@@ -232,4 +235,20 @@ i.fa.fa-times
 i.fa.fa-times:hover
 {
     color: red;
+}
+#colorblind-btn
+{
+    position: absolute;
+    font-size: 12px;
+    color: #eee;
+    top: 5px;
+    right: 10px;
+    z-index: 100;
+    cursor: pointer;
+    display: none;
+}
+#colorblind-btn i
+{
+    margin-right: 2px;
+    color: #2DEF5A;
 }

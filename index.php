@@ -59,6 +59,7 @@
 	    		<thead></thead>
 		    	<tbody></tbody>
             </table>
+            <div id="colorblind-btn"><i class="fa fa-circle-o"></i>Colorblind safe</div>
         </div>
 	</body>
 </html>
