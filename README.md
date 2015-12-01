@@ -1,5 +1,6 @@
 # Sentimentweet
 Sentiment analysis of tweets over time and space
+Link to tool: http://seelab.eecs.utk.edu/sentimentweet/
 
 ## Deployment
 - Install composer
