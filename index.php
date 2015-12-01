@@ -9,6 +9,7 @@
 		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/canvaslayer/src/CanvasLayer.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.9/d3.min.js"></script>
 		<script src="./lib/colorbrewer.js" charset="utf-8"></script>
+        <script src="./lib/jquery.linkify-1.0-min.js"></script>
 		<script src="./lib/detector.js"></script>
 		<script src="./lib/dat.gui.js"></script>
 		<script src="./lib/threejs-layer.js"></script>
