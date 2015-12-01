@@ -13,11 +13,11 @@
         if(strcmp(gettype($_GET['search_times']), "array") == 0)
         {
             $search_times = $_GET['search_times'];
-            $query = "select max(cnt) from (select count(*) as cnt from Tweets where search_term IN ($search_terms) and (created_at BETWEEN '$search_times[0]' and '$search_times[1]') group by CAST(created_at as DATE)) counter;";
+            $query = "select max(cnt) from (select count(*) as cnt from Tweets where search_term IN ($search_terms) and (created_at BETWEEN '$search_times[0]' and '$search_times[1]') group by search_term, CAST(created_at as DATE)) counter;";
         }
         else
         {
-            $query = "select max(cnt) from (select count(*) as cnt from Tweets where search_term IN ($search_terms) group by CAST(created_at as DATE)) counter;";
+            $query = "select max(cnt) from (select count(*) as cnt from Tweets where search_term IN ($search_terms) group by search_term, CAST(created_at as DATE)) counter;";
         }
         $results = mysqli_query($con, $query);
         $row = mysqli_fetch_row($results);
@@ -44,6 +44,7 @@
                 $term_counts[$term][$row[0]] = intval($row[1]) / (float) $max_count;
             }
         }
+        
         echo json_encode($term_counts);
     }
 ?>
