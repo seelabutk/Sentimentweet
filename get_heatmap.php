@@ -9,7 +9,16 @@
     else
     {
         $search_terms = "'" . implode("','", $_GET['search_terms']) . "'";
-        $query = "select max(cnt) from (select count(*) as cnt from Tweets where search_term IN ($search_terms) group by CAST(created_at as DATE)) counter;";
+
+        if(strcmp(gettype($_GET['search_times']), "array") == 0)
+        {
+            $search_times = $_GET['search_times'];
+            $query = "select max(cnt) from (select count(*) as cnt from Tweets where search_term IN ($search_terms) WHERE (created_at BETWEEN '$search_times[0]' and '$search_times[1]') group by CAST(created_at as DATE)) counter;";
+        }
+        else
+        {
+            $query = "select max(cnt) from (select count(*) as cnt from Tweets where search_term IN ($search_terms) group by CAST(created_at as DATE)) counter;";
+        }
         $results = mysqli_query($con, $query);
         $row = mysqli_fetch_row($results);
         $max_count = intval($row[0]);
@@ -19,7 +28,15 @@
         $term_counts = array();
         foreach ($_GET['search_terms'] as $term)
         {
-            $query = "select CAST(created_at as DATE), count(*) as cnt from Tweets where search_term = '$term' group by CAST(created_at as DATE);";
+            if(strcmp(gettype($_GET['search_times']), "array") == 0)
+            {
+                $search_times = $_GET['search_times'];
+                $query = "select CAST(created_at as DATE), count(*) as cnt from Tweets where search_term = '$term' and (created_at BETWEEN '$search_times[0]' and '$search_times[1]') group by CAST(created_at as DATE);";
+            }
+            else
+            {
+                $query = "select CAST(created_at as DATE), count(*) as cnt from Tweets where search_term = '$term' group by CAST(created_at as DATE);";
+            }
             $results = mysqli_query($con, $query);
             $term_counts[$term] = array();
             while ($row = mysqli_fetch_row($results))

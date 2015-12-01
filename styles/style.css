@@ -100,6 +100,7 @@ canvas
 	border: 0;
   background-color: rgba(0, 0, 0, 0.3);
   color: #eee;
+  border-radius: 0px 0px 5px 5px;
 }
 .sent_ul > li
 {
@@ -175,7 +176,7 @@ th
 }
 th > div
 {
-    transform: 
+    transform:
         translate(16px, 12px)
         rotate(315deg);
     width: 25px;

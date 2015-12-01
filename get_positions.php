@@ -11,7 +11,16 @@
         // A big SQL injection can happen riiiiight here! Gotta prevent that later
         // like maybe after the project is done!!
         $search_terms = "'" . implode("','", $_GET['search_terms']) . "'";
-        $query = "SELECT latitude, longitude, sent_score, created_at, search_term FROM Tweets WHERE latitude is not NULL and search_term IN ($search_terms)";
+
+        if(strcmp(gettype($_GET['search_times']), "array") == 0)
+        {
+          $search_times = $_GET['search_times'];
+          $query = "SELECT latitude, longitude, sent_score, created_at, search_term FROM Tweets WHERE latitude is not NULL and search_term IN ($search_terms) and (created_at BETWEEN '$search_times[0]' and '$search_times[1]')";
+        }
+        else
+        {
+          $query = "SELECT latitude, longitude, sent_score, created_at, search_term FROM Tweets WHERE latitude is not NULL and search_term IN ($search_terms)";
+        }
         $results = mysqli_query($con, $query);
 
         $posbins = array();
