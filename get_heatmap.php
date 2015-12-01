@@ -13,7 +13,7 @@
         if(strcmp(gettype($_GET['search_times']), "array") == 0)
         {
             $search_times = $_GET['search_times'];
-            $query = "select max(cnt) from (select count(*) as cnt from Tweets where search_term IN ($search_terms) WHERE (created_at BETWEEN '$search_times[0]' and '$search_times[1]') group by CAST(created_at as DATE)) counter;";
+            $query = "select max(cnt) from (select count(*) as cnt from Tweets where search_term IN ($search_terms) and (created_at BETWEEN '$search_times[0]' and '$search_times[1]') group by CAST(created_at as DATE)) counter;";
         }
         else
         {
