@@ -178,6 +178,7 @@ canvas
     box-shadow: 1px 1px 1px #000;
     background-color: #eee;
     padding: 5px;
+    top: 14px;
 }
 #term_frequency_wrapper
 {
