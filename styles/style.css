@@ -29,7 +29,6 @@ canvas
 }
 .loading
 {
-    background-image: url('../images/coffee.png');
     background-position: -45 -45;
     top: 50%;
     width: 95px;

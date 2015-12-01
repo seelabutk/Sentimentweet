@@ -44,6 +44,7 @@
 		<div id="map"></div>
 		<div id="notice">
 			<div class="loading">
+                <i class="fa fa-cog fa-spin"></i>
 				Loading...
 			</div>
 		</div>
